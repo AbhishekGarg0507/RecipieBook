@@ -2,7 +2,7 @@
     <div class="bg-image hover-overlay ripple d-flex" style="justify-content: space-between;" >
         
         
-        <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp" class="rounded-3 p-1" style="height: 280px;"/>
+        <img src="{{recipe.imagePath}}" class="rounded-3 p-1" style="height: 280px;"/>
         <span class="px-2 py-1">
 
             <i class="ri-heart-fill"></i>
@@ -10,27 +10,28 @@
     </div>
   
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">description</p>
+      <h5 class="card-title">{{recipe.name}}</h5>
+      <p class="card-text">{{recipe.description}}</p>
       <p class="card-text">ingredients</p>
 
-  
-      
       <div class="dropdown">
         <button
           class="btn btn-primary dropdown-toggle px-3"
-          href="#"
           id="dropdownMenuLink"
           data-mdb-toggle="dropdown"
           aria-expanded="false"
+          appDropdown
+          #r = appDropDown
         >
           Manage
         </button>
       
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" [ngClass]="{'show':r.isOpen}">
           <li><a class="dropdown-item" href="#">Save Data</a></li>
           <li><a class="dropdown-item" href="#">Fetch Data</a></li>
         </ul>
       </div>
+      
+    
     </div>
   </div>

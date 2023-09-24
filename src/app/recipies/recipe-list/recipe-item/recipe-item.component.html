@@ -1,1 +1,29 @@
-<p>recipe-item works!</p>
+<a  class="nav-link" 
+(click)="onSelected()"
+>
+    <!-- card single item starts -->
+
+    <div class="card mb-3" style="width: 450px; height: 100px;">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img
+              [src]="recipe.imagePath"
+              alt="Trendy Pants and Shoes"
+              class="img-fluid rounded-start"
+              style="height: 99px; width: 116px;"
+            />
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title m-0 p-0">{{recipe.name}}</h5>
+              <p class="card-text m-0">
+                {{recipe.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- card single item end-->
+
+</a>

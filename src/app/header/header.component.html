@@ -5,10 +5,10 @@
       <div class="nav navbar-nav mx-auto" >
         <ul class="navbar-nav  mb-2 mb-lg-0">
           <li class="nav-item ">
-            <a class="nav-link px-3" href="#!">Recipes</a>
+            <a class="nav-link px-3"  (click)="onSelect('recipe')"  >Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#!">Shopping List</a>
+            <a class="nav-link px-3" (click)="onSelect('shopping-list')" >Shopping List</a>
           </li>
           <div class="dropdown">
             <a
@@ -17,11 +17,13 @@
               id="dropdownMenuLink"
               data-mdb-toggle="dropdown"
               aria-expanded="false"
+              appDropdown
+              #r = appDropDown
             >
               Manage
             </a>
           
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" [ngClass]="{'show':r.isOpen}">
               <li><a class="dropdown-item" href="#">Save Data</a></li>
               <li><a class="dropdown-item" href="#">Fetch Data</a></li>
             </ul>
