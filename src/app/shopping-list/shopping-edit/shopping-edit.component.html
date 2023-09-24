@@ -3,15 +3,14 @@
         <form>
             <div class="row mb-2">
                 <div class="col-sm-5">
-                    <div class="form-outline">
+                    <div class="form-group">
                         <label class="form-label" for="name">Name</label>
-                        <input type="text" id="name" 
-                        class="form-control"
+                        <input type="text" id="name" class="form-control"
                         #nameInput />
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <div class="form-outline">
+                    <div class="form-group">
                         <label class="form-label" for="Amount">Amount</label>
                         <input type="number" id="Amount" class="form-control"  #amountInput/>
                       </div>
@@ -19,9 +18,9 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button class="btn btn-success " (click)="onAddItem()">Add</button>
-                    <button class="btn btn-primary ">Clear</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-success me-2"  (click)="onAddItem()">Add</button>
+                    <button class="btn btn-primary me-2" >Clear</button>
+                    <button class="btn btn-danger me-2 " type="submit">Delete</button>
                 </div>
             </div>
         </form>

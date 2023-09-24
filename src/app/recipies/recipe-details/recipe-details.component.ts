@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
+import { RecipeService } from 'src/app/services/recipe.service';
 import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 
 @Component({
@@ -9,4 +10,10 @@ import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 })
 export class RecipeDetailsComponent {
   @Input() recipe:Recipe;
+
+  constructor(private recipeService:RecipeService){}
+
+  addToShoppingList(){
+    this.recipeService.OnAddToShoppingList(this.recipe.ingredients);
+  }
 }

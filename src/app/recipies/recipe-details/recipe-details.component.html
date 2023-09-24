@@ -27,8 +27,16 @@
         </button>
       
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" [ngClass]="{'show':r.isOpen}">
-          <li><a class="dropdown-item" href="#">Save Data</a></li>
-          <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+          <li><a class="dropdown-item" (click)="addToShoppingList()">To shopping list</a></li>
+          <li><a class="dropdown-item" href="#">Edit Recipe</a></li>
+          <li><a class="dropdown-item" href="#">Delete Recipe</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of recipe.ingredients">
+            {{item.name}} - {{item.amount}}
+          </li>
         </ul>
       </div>
       
