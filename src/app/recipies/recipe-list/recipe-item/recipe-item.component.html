@@ -1,9 +1,10 @@
-<a  class="nav-link" 
-(click)="onSelected()"
->
+<!-- <a  class="nav-link m-0 p-0" style="cursor:pointer;"
+[routerLink]="[index]"
+routerLinkActive="active"
+> -->
     <!-- card single item starts -->
 
-    <div class="card mb-3" style="width: 450px; height: 100px;">
+    <a class="card mb-3" style="width: 450px; height: 100px; text-decoration: none;" [routerLink]="[index]" routerLinkActive="active">
         <div class="row g-0">
           <div class="col-md-3">
             <img
@@ -22,8 +23,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
     <!-- card single item end-->
 
-</a>
+<!-- </a> -->

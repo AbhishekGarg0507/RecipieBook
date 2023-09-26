@@ -1,19 +1,19 @@
 <nav class="navbar navbar-expand-lg fixed-top shadow-0" style="background-color: #d3643f1c;">
     <div class="container">
-      <a class="navbar-brand" href="#">Recipe Book</a>
+      <a class="navbar-brand" routerLink="/recipes" routerLinkActive="active">Recipe Book</a>
       
       <div class="nav navbar-nav mx-auto" >
         <ul class="navbar-nav  mb-2 mb-lg-0">
           <li class="nav-item ">
-            <a class="nav-link px-3" href="#" (click)="onSelect('recipe')" >Recipes</a>
+            <a class="nav-link px-3" routerLink="/recipes" routerLinkActive="active" >Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#" (click)="onSelect('shopping-list')" >Shopping List</a>
+            <a class="nav-link px-3" routerLink="/shopping-list" routerLinkActive="active">Shopping List</a>
           </li>
           <div class="dropdown">
             <a
               class="dropdown-toggle nav-link px-3"
-              href="#"
+              style="cursor: pointer;"
               id="dropdownMenuLink"
               data-mdb-toggle="dropdown"
               aria-expanded="false"
@@ -24,12 +24,12 @@
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" [ngClass]="{'show':r.isOpen}">
-              <li><a class="dropdown-item" href="#">Save Data</a></li>
-              <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+              <li><a class="dropdown-item" style="cursor: pointer;" >Save Data</a></li>
+              <li><a class="dropdown-item" style="cursor: pointer;" >Fetch Data</a></li>
             </ul>
           </div>
           <li class="nav-item">
-            <a class="nav-link px-3" href="#!">About us</a>
+            <a class="nav-link px-3" routerLink="/about" routerLinkActive="active">About us</a>
           </li>
         </ul>
   
