@@ -28,7 +28,7 @@
                 <div class="col-xs-12">
                     <button class="btn btn-success me-2" type="submit" [disabled]="form.invalid">{{editMode ? 'Update' : 'Add'}}</button>
                     <button class="btn btn-primary me-2" type="button" (click)="onClear()" >Clear</button>
-                    <button class="btn btn-danger me-2 " type="button">Delete</button>
+                    <button class="btn btn-danger me-2 " type="button" *ngIf="editMode"  (click)="onDelete()">Delete</button>
                 </div>
             </div>
         </form>
