@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
-import { DropdownDirective } from 'src/app/shared/dropdown.directive';
 
 @Component({
   selector: 'app-recipe-details',
