@@ -3,7 +3,9 @@
         <button type="submit" 
             class="btn btn-success me-3"
             [disabled]="!recipeForm.valid">Save</button>
-        <button type="button" class="btn btn-danger ">Cancel</button>
+        <button type="button"   
+            class="btn btn-danger "
+            (click)="onCancel()">Cancel</button>
     </div>
     <div class="form-row">
       <div class="form-group">
@@ -20,10 +22,11 @@
                 type="text" 
                 class="form-control " 
                 id="imageurl" 
-                formControlName="imagePath">
+                formControlName="imagePath"
+                #imagePath>
           </div>
-          <div>
-            <img src="" class="image-responsive">
+          <div class="mt-2" >
+            <img [src]="imagePath.value" class="img-fluid" >
           </div>
       </div>
       
@@ -40,15 +43,18 @@
     </div>
 
     <div class="row" formArrayName="ingredients">
-        <label class="mb-1">Ingredients :</label>
-        <div class="row">
+        <div *ngIf="ingLabelFlag">
+            <label class="mb-1">Ingredients :</label>
+            <div class="row">
             <div class="col-md-8">
                 <label for="InName">Name</label>
             </div>
             <div class="col-md-2">
                 <label for="InAmount">Amount</label>
             </div>
+            </div>
         </div>
+        
         <div class="row mb-3"
             *ngFor="let ingCtrl of controls; let i = index"
             [formGroupName]="i"
@@ -70,7 +76,9 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <button class="btn btn-danger">X</button>
+                <button class="btn btn-danger" 
+                    (click)="onDeleteIngredient(i)"
+                    type="button">X</button>
             </div>
         </div>
         <hr>

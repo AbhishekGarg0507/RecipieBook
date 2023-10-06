@@ -17,9 +17,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editedItem:Ingredient;
 
   constructor(private slService:ShoppingListService){}
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
+  
 
   ngOnInit(): void {
     this.subscription = this.slService.editIngredient
@@ -55,5 +53,8 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   onDelete(){
     this.slService.deleteIngredient(this.editedItemIndex);
     this.onClear();
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
