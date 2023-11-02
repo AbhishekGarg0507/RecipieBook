@@ -18,6 +18,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ShoppingListService } from './services/shopping-list.service';
 import { RecipeService } from './services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
+import { HomeComponent } from './home/home.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     DropdownDirective,
     AboutComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthComponent,
+    HomeComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

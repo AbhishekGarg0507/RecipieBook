@@ -1,0 +1,59 @@
+<div *ngIf="isLoading"  style=" display: flex; align-items: center; justify-content: center; margin-top: 15%;">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<div class="card mb-3 mx-auto mt-5 shadow" style="max-width: 700px; border:0" *ngIf="!isLoading">
+    <div class="row g-0">
+      <div class="col-md-12 background-card rounded">
+        <div class="card-body ">
+          <h2 class="card-title mb-3">{{isLoggedIn ? 'Login' : 'Signup'}}</h2>  
+            
+          
+          <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
+            <B>Email</B>
+            <div class=" form-floating mb-3">
+                <input type="text" 
+                       class="form-control" 
+                       id="floatingInput" 
+                       placeholder="name@example.com"
+                       name="email"
+                       ngModel required #email="ngModel" email>
+                <label for="floatingInput">Email</label>
+                <span class="text-danger" *ngIf="!email.valid && email.touched">Email is a required !!</span>
+            </div>
+            
+
+            <B>PASSWORD</B>
+            <div class="form-floating mb-3">
+                <input type="password" 
+                       class="form-control" 
+                       id="floatingPassword" 
+                       placeholder="Password" 
+                       name="password" 
+                       ngModel required #password="ngModel" password
+                       minlength="6">
+                <label for="floatingPassword">Password</label>
+                <span class="text-danger" *ngIf="!password.valid && password.touched">Password is a required !!</span>
+            </div>
+            
+
+            <div class="mb-3 d-grid">
+                <button type="submit" class="btn myButton" 
+                    [disabled]="!form.valid"
+                    >
+                    {{isLoggedIn ? 'Login' : 'Signup'}}
+                </button>
+            </div>
+            
+            <div class="col-md-12">
+                <p class="text-center switchtext" style="cursor: pointer;">
+                    <a (click)="switchMode()">Switch to {{isLoggedIn ? 'Login' : 'Signup'}}</a>
+                </p>
+            </div>    
+
+          </form>
+
+          
+        </div>
+      </div>
+    </div>
+  </div> 
