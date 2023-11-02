@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+import { AusthResponseData, AuthService } from '../services/auth.service';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -10,8 +12,10 @@ import { AuthService } from '../services/auth.service';
 export class AuthComponent {
   isLoggedIn = true ; 
   isLoading = false;
+  error:string = null;
 
-  constructor(private authservice:AuthService){}
+  constructor(private authservice:AuthService,
+    private router:Router){}
 
   switchMode(){
     this.isLoggedIn = !this.isLoggedIn;
@@ -24,22 +28,28 @@ export class AuthComponent {
 
     const email = form.value.email;
     const password = form.value.password;
+    let authObservable:Observable<AusthResponseData>;
 
     this.isLoading = true;
+
     if(this.isLoggedIn){
-      //...
+      authObservable = this.authservice.login(email,password);
     }else{
-      this.authservice.signup(email,password).subscribe(
-        res =>{
-          console.log(res);
-          this.isLoading = false;
-        },
-        error =>{
-          console.log(error);
-          this.isLoading = false;
-        }
-        );
+      authObservable = this.authservice.signup(email,password);
     }
+
+    authObservable.subscribe(
+      res =>{
+        console.log(res);
+        this.isLoading = false;
+        this.router.navigate(["/home"]);
+      },
+      errMsg =>{
+        console.log(errMsg);
+        this.error = errMsg;
+        this.isLoading = false;
+      }
+      );
     form.reset();
   }
 }

@@ -8,12 +8,12 @@
             <a class="nav-link px-3" routerLink="home" routerLinkActive="active" >Home</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link px-3" routerLink="recipes" routerLinkActive="active" >Recipes</a>
+            <a class="nav-link px-3" routerLink="recipes" routerLinkActive="active" *ngIf="isAuthanticated">Recipes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link px-3" routerLink="shopping-list" routerLinkActive="active">Shopping List</a>
           </li>
-          <div class="dropdown">
+          <div class="dropdown" *ngIf="isAuthanticated">
             <a
               class="dropdown-toggle nav-link px-3"
               style="cursor: pointer;"
@@ -32,7 +32,7 @@
             </ul>
           </div>
           <li class="nav-item">
-            <a class="nav-link px-3" routerLink="/auth" routerLinkActive="active">auth page</a>
+            <a class="nav-link px-3" routerLink="/auth" routerLinkActive="active" *ngIf="!isAuthanticated">auth page</a>
           </li>
           <li class="nav-item">
             <a class="nav-link px-3" routerLink="/about" routerLinkActive="active">About us</a>
@@ -43,11 +43,11 @@
         
       </div>
       <ul class="navbar-nav flex-row ">
-        <!-- <li class="nav-item">
-          <a class="nav-link pe-3" href="#!">
-            
+        <li class="nav-item">
+          <a class="nav-link pe-3" style="cursor: pointer;" *ngIf="isAuthanticated" (click)="onLogout()">
+            Logout
           </a>
-        </li> -->
+        </li>
         <li class="nav-item">
           <a class="nav-link px-3" href="#!">
               <i class="ri-facebook-fill"></i>

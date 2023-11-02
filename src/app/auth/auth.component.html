@@ -1,6 +1,11 @@
+<div class="alert alert-danger" *ngIf="error">
+    <p class="p-0 m-0">{{error}}</p>
+</div>
+
 <div *ngIf="isLoading"  style=" display: flex; align-items: center; justify-content: center; margin-top: 15%;">
     <app-loading-spinner></app-loading-spinner>
 </div>
+
 <div class="card mb-3 mx-auto mt-5 shadow" style="max-width: 700px; border:0" *ngIf="!isLoading">
     <div class="row g-0">
       <div class="col-md-12 background-card rounded">
