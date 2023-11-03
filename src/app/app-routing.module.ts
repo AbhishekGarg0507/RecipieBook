@@ -11,7 +11,8 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/recipes', pathMatch:'full'},
+  {path:'' , component:HomeComponent },
+  // {path:'',redirectTo:'/recipes', pathMatch:'full'},
   {path:'recipes' , component:RecipiesComponent ,
     children:[
       {path:'',component:RecipeStartComponent},
@@ -24,7 +25,6 @@ const routes: Routes = [
   {path:'shopping-list' , component:ShoppingListComponent },
   {path:'about' , component:AboutComponent },
   {path:'auth' , component:AuthComponent },
-  {path:'home' , component:HomeComponent },
 
 ];
 
