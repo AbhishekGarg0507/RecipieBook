@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, catchError, tap, throwError } from 'rxjs';
 import { User } from '../auth/user.model';
+import { Router } from '@angular/router';
 
 
 export interface AusthResponseData {
@@ -19,8 +20,11 @@ export interface AusthResponseData {
 })
 export class AuthService {
   user = new BehaviorSubject<User>(null);
+  private tokenExpirationTimer:any;
 
-  constructor(private http:HttpClient) { }
+
+  constructor(private http:HttpClient,
+    private router:Router) { }
 
   signup(email: string , password : string){
     return this.http.post<AusthResponseData>(
@@ -44,11 +48,13 @@ export class AuthService {
     }));
 
   }
-    private handleAuth(email:string ,userId:string, token:string , exiresIn:number){
-      const expirationDate = new Date(new Date().getTime() + exiresIn*1000);
+    private handleAuth(email:string ,userId:string, token:string , expiresIn:number){
+      const expirationDate = new Date(new Date().getTime() + expiresIn*1000);
       const user = new User(email , userId ,token , expirationDate);
 
       this.user.next(user);
+      this.autoLogout(expiresIn * 1000)
+      localStorage.setItem('userData' , JSON.stringify(user));
     }
 
 
@@ -72,5 +78,42 @@ export class AuthService {
       return throwError(errorMessage);
    }
 
+   logout(){
+    this.user.next(null);
+    this.router.navigate(['/auth']);
+    localStorage.removeItem('userData');
 
+    if(this.tokenExpirationTimer){
+      clearTimeout(this.tokenExpirationTimer);
+    }
+
+    this.tokenExpirationTimer = null;
+   }
+   //this function check that tha user is already loggedin or not, as we reload the page manually
+   autoLogin(){
+    
+    const userData:{
+      email:string;
+      id:string;
+      _token:string;
+      _tokenExpirationDate:string;
+    } = JSON.parse(localStorage.getItem('userData'));
+    if(!userData){
+      return;
+    }
+    
+    const loadedUser = new User(userData.email, userData.id , userData._token , new Date(userData._tokenExpirationDate));
+
+    if(loadedUser){
+      this.user.next(loadedUser);
+      const expirationDura = new Date(userData._tokenExpirationDate).getTime() - new Date().getTime();
+      this.autoLogout(expirationDura);
+    }
+   }
+
+   autoLogout(expirationDuration:number){
+    this.tokenExpirationTimer = setTimeout(() => {
+      this.logout();
+    }, expirationDuration);
+   }
 }
