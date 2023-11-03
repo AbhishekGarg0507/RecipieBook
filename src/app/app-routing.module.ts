@@ -9,11 +9,13 @@ import { RecipeEditComponent } from './recipies/recipe-edit/recipe-edit.componen
 import { RecipeResolverService } from './recipies/recipes-resolver.service';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './auth/auth-guard';
 
 const routes: Routes = [
   {path:'' , component:HomeComponent },
   // {path:'',redirectTo:'/recipes', pathMatch:'full'},
   {path:'recipes' , component:RecipiesComponent ,
+    canActivate:[AuthGuard] , 
     children:[
       {path:'',component:RecipeStartComponent},
       {path:'new',component:RecipeEditComponent},

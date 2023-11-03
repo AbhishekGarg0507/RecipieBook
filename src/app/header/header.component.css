@@ -1,5 +1,6 @@
 .navbar-brand {
-    letter-spacing: 3px;
+  font-size: 21px;
+    letter-spacing: 4px;
     color: #c24244;
   }
   
@@ -7,16 +8,9 @@
       color: #c24244;
   }
   
-  .navbar-scroll .nav-link,
-  .navbar-scroll .fa-bars {
-    color: #7f4722;
+  a{
+    font-weight: 400;
+    font-size: 17px;
   }
-  
-  .navbar-scrolled .nav-link,
-  .navbar-scrolled .fa-bars {
-    color: #7f4722;
-  }
-  
-  .navbar-scrolled {
-    background-color: #ffede7;
-  }
+
+ 

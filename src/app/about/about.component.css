@@ -10,17 +10,24 @@ main{
     height: 220px;
     overflow-x: hidden;
     font-size: 144px;
+    box-shadow: inset 5px 5px 5px black inset 5px 5px 5px black;
     font-weight: bold
+    
   }
   
   .track {
     position: absolute;
     white-space: nowrap;
-    will-change: transform;
-    animation:marquee 10s linear infinite;
+    /* will-change: transform; */
+    animation:marquee 7s linear infinite;
   }
-  
+  .content>span{
+    margin-right: 80px;
+  }
   @keyframes marquee {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-40%); }
   }
+
+
+  
