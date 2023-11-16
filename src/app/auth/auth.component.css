@@ -23,5 +23,5 @@ input.ng-valid.ng-touched{
     border: 1px solid green;
 }
 .background-card{
-    background: linear-gradient(to bottom , rgba(209, 141, 141, 0.726) , rgb(255, 255, 255));
+    background: linear-gradient(to bottom , rgb(237 172 172 / 73%) , rgb(255, 255, 255));
 }
