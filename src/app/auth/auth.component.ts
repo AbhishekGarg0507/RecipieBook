@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ComponentFactoryResolver } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AusthResponseData, AuthService } from '../services/auth.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../shared/alert/alert.component';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +16,8 @@ export class AuthComponent {
   error:string = null;
 
   constructor(private authservice:AuthService,
-    private router:Router){}
+    private router:Router,
+    private compFacRes:ComponentFactoryResolver ){}
 
   switchMode(){
     this.isLoggedIn = !this.isLoggedIn;
@@ -52,4 +54,9 @@ export class AuthComponent {
       );
     form.reset();
   }
+
+  onHandleError(){
+    this.error = null;
+  }
+
 }

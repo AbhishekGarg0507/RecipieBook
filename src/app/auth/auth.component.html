@@ -1,7 +1,7 @@
-<div class="alert alert-danger" *ngIf="error">
+<!-- <div class="alert alert-danger" *ngIf="error">
     <p class="p-0 m-0">{{error}}</p>
-</div>
-
+</div> -->
+<app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
 <div *ngIf="isLoading"  style=" display: flex; align-items: center; justify-content: center; margin-top: 15%;">
     <app-loading-spinner></app-loading-spinner>
 </div>

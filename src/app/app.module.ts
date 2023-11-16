@@ -22,15 +22,12 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor';
+import { AlertComponent } from './shared/alert/alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipiesComponent,
-    RecipeListComponent,
-    RecipeDetailsComponent,
-    RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
@@ -39,7 +36,8 @@ import { AuthInterceptorService } from './auth/auth-interceptor';
     RecipeEditComponent,
     AuthComponent,
     HomeComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

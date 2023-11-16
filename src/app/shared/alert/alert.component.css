@@ -1,0 +1,19 @@
+.backdrop{
+    height: 100vh ;
+    width: 100vw ;
+    background: #00000054 ;
+    position: fixed ;
+    top: 0 ;
+    z-index: 99 ;
+    left: 0px ;
+}
+
+.alert-box{
+    position: fixed ;
+    z-index: 999 ;
+    top: 20vw ;
+    left: 20vw ;
+    height: 12vw ;
+    right: 20vw ;
+    padding: 0px ;
+}
