@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { AboutComponent } from './about/about.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ShoppingListService } from './services/shopping-list.service';
@@ -18,13 +16,12 @@ import { AuthInterceptorService } from './auth/auth-interceptor';
 import { AlertComponent } from './shared/alert/alert.component';
 import { RecipiesModule } from './recipies/recipies.module';
 import { DropdownModule } from './shared/dropdown.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     AboutComponent,
     AuthComponent,
     HomeComponent,
@@ -38,7 +35,8 @@ import { DropdownModule } from './shared/dropdown.module';
     HttpClientModule,
     ReactiveFormsModule,
     RecipiesModule,
-    DropdownModule
+    DropdownModule,
+    ShoppingListModule
   ],
   providers: [
     ShoppingListService ,

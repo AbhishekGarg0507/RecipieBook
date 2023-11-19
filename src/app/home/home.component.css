@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+main{
+    height: 100%;
+    width: 100%;
+}
+
+ h1{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 10rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: #333;
+}
+
+h1 img{
+
+    height: 200px;
+    width: 184px;
+    margin-top: -47px;
+}
+
+.explore-recipes{
+    height: 50vh;
+    width: 100%;
+}
+.explore-text{
+    height: 130px;
+    width: 130px;
+    /* text-align: center; */
+    transform: translateX(38vh);
+    padding: 38px ;
+    text-align: center;
+}
+.explore-text a{
+    text-decoration: none;
+    color: #fff;
+}
+.explore-recipes .hr{
+    width: 70%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #999;
+}
+.explore-recipes p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.explore-recipes .image1{
+    height: 400px;
+    width: 400px;
+    margin-bottom: 10%;
+}
+
+.explore-recipes .image2{
+    height: 200px;
+    width: 200px;
+    transform: translate(10%, -32%);
+}
+
+.about{
+    width: 100%;
+    background-color: #f9f9f9;
+    margin-top: 6%;
+}
+
+.about .h3{
+    padding-top: 40px;
+    font-size: 5.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    /* font-weight: 500; */
+}
+.about .h3 img{
+    height: 80px;
+    width: 80px;
+    transform: translate(-10px, -10px);
+}
+.about .hr{
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.about .about-footer p{
+    margin-top: 15px;
+    width: 65%;
+}
+.about .about-footer a{
+    cursor: pointer;
+}
