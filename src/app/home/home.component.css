@@ -85,5 +85,74 @@ h1 img{
     width: 65%;
 }
 .about .about-footer a{
+    padding: 5px;
     cursor: pointer;
+}
+.h2{
+    font-size: 7rem;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.viewlatest .row{
+    margin-top: 100px;
+    height: 85vh;
+}
+.viewlatest h2{
+    margin-top: 100px;
+}
+.viewlatest img{
+    transform: translate(-7%,-15%);
+}
+.viewlatest .viewlatest-card{
+    border-bottom: 1.5px solid #707070;
+}
+
+.viewlatest-card a:hover i{
+    transform: rotate(45deg);
+    transition: all ease-in-out .3s;
+}
+.section3{
+    height: 100vh;
+}
+.section3>p{
+    width: 80%;
+    padding: 0px 100px;
+    margin-left: 11%;
+}
+.contact{
+    height: 50vh;
+    background-color: #f9f9f9;
+}
+.contact .h3{
+    font-size: 5.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.contact .contact-form{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.contact-form .inputfield input{
+    height: 70px;
+    width: 400px;
+    border-radius: 35px;
+    padding: 30px;
+    border: 1px solid black;
+}
+.contact-form .button a{
+    background-color: #111;
+    height: 70px;
+    width: 300px;
+    padding: 17px;
+    font-size: 1.2rem;
+    border-radius: 35px;
+    border: 1px solid #111;
+    color: #fff;
 }
