@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
 main{
     height: 100%;
     width: 100%;
@@ -13,7 +13,6 @@ main{
 }
 
 h1 img{
-
     height: 200px;
     width: 184px;
     margin-top: -47px;
@@ -100,7 +99,7 @@ h1 img{
     height: 85vh;
 }
 .viewlatest h2{
-    margin-top: 100px;
+    margin-top: 60px;
 }
 .viewlatest img{
     transform: translate(-7%,-15%);
