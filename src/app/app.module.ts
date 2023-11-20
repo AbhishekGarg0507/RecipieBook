@@ -17,6 +17,7 @@ import { AlertComponent } from './shared/alert/alert.component';
 import { RecipiesModule } from './recipies/recipies.module';
 import { DropdownModule } from './shared/dropdown.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
     AuthComponent,
     HomeComponent,
     LoadingSpinnerComponent,
-    AlertComponent
+    AlertComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
