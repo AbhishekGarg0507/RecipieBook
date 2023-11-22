@@ -1,16 +1,17 @@
-B{
-    font-size: 12px;
-    font-weight: 800;
+ B{
+    font-size: 14px;
+    font-weight: 600;
 }
 .myButton{
     background-color: #c24244;
     border: 1px solid #c24244 ;
     color: white;
+    opacity: 1;
 }
 .myButton:hover{
     border: 1px solid #c24244 ;
     font-size: 20px;
-    /* scale: 1.03; */
+    scale: 1.03;
     transition: all ease .5s;
 }
 .switchtext a:hover{
@@ -22,6 +23,33 @@ input.ng-invalid.ng-touched{
 input.ng-valid.ng-touched{
     border: 1px solid green;
 }
+
+/*
 .background-card{
     background: linear-gradient(to bottom , rgb(237 172 172 / 73%) , rgb(255, 255, 255));
+} */
+.backgroundshapes{
+    min-height: 100vh;
+    background-color: red;
+    background: url(../../assets/background-layer1.png);
+    background-size: cover;
+    background-position: center;
+}
+.backgroundshapes .loader{
+    transform: translate(50vw , 34vh);
+}
+.card{
+    width: 60%;
+    transform: translateY(20%);
+    background: #ffffffbb;
+    left: 20%;
+    z-index: 1;
+}
+
+.card-header h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    color: #333;
 }

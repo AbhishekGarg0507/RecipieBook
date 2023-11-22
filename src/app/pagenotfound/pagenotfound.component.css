@@ -1,0 +1,26 @@
+.main{
+    min-height: calc(100vh - 100px);
+    background-color: #111;
+}
+.main .background h1{
+    font-size: 28rem;
+    letter-spacing: 5rem;
+    transform: translateY(-120px);
+    color: #333;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.body{
+    transform: translateY(-25vh);
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+}
+.body h3{
+    /* font-family: 'Cormorant Garamond', serif; */
+    font-size: 3rem;
+    letter-spacing: 8px;
+}
+.body a{
+    /* text-decoration: none; */
+    color: #c24244;
+}

@@ -18,6 +18,7 @@ import { RecipiesModule } from './recipies/recipies.module';
 import { DropdownModule } from './shared/dropdown.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { FooterComponent } from './footer/footer.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     LoadingSpinnerComponent,
     AlertComponent,
-    FooterComponent
+    FooterComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

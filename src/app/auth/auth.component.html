@@ -1,11 +1,9 @@
 <!-- <div class="alert alert-danger" *ngIf="error">
     <p class="p-0 m-0">{{error}}</p>
 </div> -->
-<app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
-<div *ngIf="isLoading"  style=" display: flex; align-items: center; justify-content: center; margin-top: 15%;">
-    <app-loading-spinner></app-loading-spinner>
-</div>
+ <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
 
+<!--
 <div class="card mb-3 mx-auto mt-5 shadow" style="max-width: 700px; border:0" *ngIf="!isLoading">
     <div class="row g-0">
       <div class="col-md-12 background-card rounded">
@@ -61,4 +59,72 @@
         </div>
       </div>
     </div>
+  </div>  -->
+
+
+<div class="backgroundshapes">
+  <!-- <div>
+    <img src="../../assets/background-layer.png">
   </div> 
+
+-->
+  <div  class="loader" *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+  <div class="card border-0 shadow" *ngIf="!isLoading">
+    <div class="card-header">
+
+      <h2 class="card-title pt-1 text-center">{{isLoggedIn ? 'Login' : 'Signup'}}</h2> 
+    </div>
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-md-12">
+          <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
+            <B>EMAIL</B>
+            <div class=" form-floating mb-3">
+                <input type="text" 
+                       class="form-control" 
+                       id="floatingInput" 
+                       placeholder="name@example.com"
+                       name="email"
+                       ngModel required #email="ngModel" email>
+                <label for="floatingInput">Email</label>
+                <span class="text-danger" *ngIf="!email.valid && email.touched">Email is a required !!</span>
+            </div>
+            
+
+            <B>PASSWORD</B>
+            <div class="form-floating mb-3">
+                <input type="password" 
+                       class="form-control" 
+                       id="floatingPassword" 
+                       placeholder="Password" 
+                       name="password" 
+                       ngModel required #password="ngModel" password
+                       minlength="6">
+                <label for="floatingPassword">Password</label>
+                <span class="text-danger" *ngIf="!password.valid && password.touched">Password is a required !!</span>
+            </div>
+            
+
+            <div class="mb-3 d-grid">
+                <button type="submit" class="btn myButton" 
+                    [disabled]="!form.valid"
+                    >
+                    {{isLoggedIn ? 'Login' : 'Signup'}}
+                </button>
+            </div>
+            
+            <div class="col-md-12">
+                <p class="text-center switchtext" style="cursor: pointer;">
+                    <a (click)="switchMode()">Switch to {{isLoggedIn ? 'Login' : 'Signup'}}</a>
+                </p>
+            </div>    
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
