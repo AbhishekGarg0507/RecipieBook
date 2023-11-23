@@ -6,12 +6,10 @@
     background-color: #c24244;
     border: 1px solid #c24244 ;
     color: white;
-    opacity: 1;
 }
 .myButton:hover{
     border: 1px solid #c24244 ;
-    font-size: 20px;
-    scale: 1.03;
+    scale: 1.005;
     transition: all ease .5s;
 }
 .switchtext a:hover{

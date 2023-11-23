@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { PagenotfoundComponent } from "../pagenotfound/pagenotfound.component";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations:[
@@ -15,9 +16,10 @@ import { PagenotfoundComponent } from "../pagenotfound/pagenotfound.component";
         CommonModule,
         FormsModule,
         RouterModule.forChild([
-            {path:'shopping-list' , component:ShoppingListComponent },
+            {path:'' , component:ShoppingListComponent },
             {path:'**' ,pathMatch:"full", component:PagenotfoundComponent}
-        ])
+        ]),
+        SharedModule,
     ]
 })
 

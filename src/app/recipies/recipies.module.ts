@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { DropdownDirective } from "../shared/dropdown.directive";
 import { DropdownModule } from "../shared/dropdown.module";
 import { RecipiesRoutingModule } from "./recipies-routing.module";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations:[
@@ -26,7 +27,8 @@ import { RecipiesRoutingModule } from "./recipies-routing.module";
         CommonModule,
         ReactiveFormsModule,
         DropdownModule,
-        RecipiesRoutingModule
+        RecipiesRoutingModule,
+        SharedModule
     ]
 })
 export class RecipiesModule{}

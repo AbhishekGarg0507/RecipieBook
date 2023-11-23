@@ -9,7 +9,8 @@ import { RecipiesComponent } from "./recipies.component";
 import { PagenotfoundComponent } from "../pagenotfound/pagenotfound.component";
 
 const routes = [
-    {path:'recipes' , component:RecipiesComponent ,
+    {path:'' , 
+    component:RecipiesComponent ,
     canActivate:[AuthGuard] , 
     children:[
       {path:'',component:RecipeStartComponent},
