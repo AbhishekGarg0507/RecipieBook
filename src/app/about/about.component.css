@@ -1,0 +1,22 @@
+.banner{
+    /* background-color: red; */
+    height: 30vh;
+    background-image: url(../../assets/banner.png);
+    background-size: cover;
+    /* object-fit: cover; */
+    /* filter: grayscale(.5); */
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 68% 91%, 37% 100%, 0 91%); */
+    box-shadow: 0 8px 10px gray;
+    position: relative;
+}
+.banner .h1{
+    color: #dfdede;
+    filter: drop-shadow(-4px 0px 2px rgb(82, 82, 82));
+}
+.about{
+    height: 60vh;
+}
+.content{
+    background-color: #f9f9f9;
+    height: 60vh;
+}
