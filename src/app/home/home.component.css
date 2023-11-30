@@ -4,7 +4,7 @@ main{
     width: 100%;
 }
 
- h1{
+h1{
     text-transform: uppercase;
     text-align: center;
     font-size: 10rem;
@@ -19,7 +19,7 @@ h1 img{
 }
 
 .explore-recipes{
-    height: 50vh;
+    /* height: 50vh; */
     width: 100%;
 }
 .explore-text{
@@ -155,3 +155,19 @@ h1 img{
     border: 1px solid #111;
     color: #fff;
 }
+
+
+@media (max-width: 600px) { 
+    h1{
+        font-size: 5rem;
+        display: flex;
+        flex-direction: column;
+    }
+    h1 img{
+        margin-top: 5px;
+    }
+
+    .explore-recipes .image1{
+        
+    }
+ }
